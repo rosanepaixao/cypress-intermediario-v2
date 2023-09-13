@@ -55,7 +55,8 @@ Cypress.Commands.add('login', (
     cy.contains(label.name).click()
     cy.get('body').click()
   })
-  Cypress.Commands.add('gui_setMilestoneOnIssue', milestone =>{
+
+  Cypress.Commands.add('gui_setMilestoneOnIssue', milestone => {
     cy.get('.block.milestone .edit-link').click()
     cy.contains(milestone.title).click()
   })
