@@ -20,6 +20,8 @@ describe (' Set milestone on issue', options, () =>{
         cy.api_createIssue(issue)
           .then(response =>{
             cy.api_createMilestone(response.body.project_id, milestone)
+            
+        cy.visit(`${Cypress.env('user_name')}/${issue.project.name}/issues/${response.body.iid}`)
           })
     })
     it('successfully', () => {
